@@ -1,0 +1,709 @@
+/**
+ *
+ * @author: 			Hafeez Syed - feeziman007@hotmail.com
+ * @type: 				sass/compass=>css
+ * @project				My Portfolio Website
+ * @description:		Styles for Desktop and Devices
+ *
+ */
+/**
+ *	@mixin 			=> Declares function/method and also it accepts values as parameteres e.g "@mixin functionname($param: defaultvalue){}"
+ *	@include		=> Calls mixin function/method and also passes parameters e.g "@include functionname"
+ *	@extend			=> Inherits and styles e.g "@extend .style" OR "@extend #style"
+ *	$variableName	=> Declares variable name and value e.g "$variableName: value" OR "$main-color: #fff"
+ *
+ */
+/**
+ *	REFER TO http://compass-style.org/reference/compass/css3/
+ *
+ */
+/** ==========================================================================
+   Importing base.scss - contains all @mixins and common attributes
+   ========================================================================== 
+*/
+/** =========================================
+   Selection Styles
+   ========================================== 
+*/
+::-moz-selection, ::selection {
+  background: #ff5021;
+  color: white;
+  text-shadow: none;
+}
+
+/** =========================================
+   Prevent any object from being highlighted upon touch event
+   ========================================== 
+*/
+* {
+  -webkit-tap-highlight-color: #ff5021;
+}
+
+/** =========================================
+   BODY
+   ========================================== 
+*/
+body {
+  background: url("../images/header_home-bg.jpg") no-repeat scroll 0 0 transparent;
+  margin: 0;
+  text-align: center;
+}
+
+/** =========================================
+   IMAGE BORDER
+   ========================================== 
+*/
+img {
+  border: 1px solid #cccccc !important;
+}
+
+/** =========================================
+   MAIN DIV
+   ========================================== 
+*/
+#main {
+  background: none;
+  clear: both;
+  height: auto;
+  margin: 0 auto;
+  width: 70%;
+  /* 984px */
+}
+
+/** =========================================
+   WRAPPER DIV
+   ========================================== 
+*/
+#wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/** =========================================
+   LOGO
+   ========================================== 
+*/
+.logo {
+  float: left;
+  margin: 49px 0 0 0;
+}
+.logo a {
+  background: url(../images/logo.jpg) no-repeat scroll 0 0 transparent;
+  display: block;
+  height: 26px;
+  margin: auto;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 196px;
+}
+
+/** =========================================
+   CHECK WINDOW WIDTH VS DIV WIDTH 
+   ========================================== 
+*/
+.winsize {
+  background-color: #ff0000;
+  color: #000;
+  display: none;
+  width: 100px;
+}
+
+/** =========================================
+   HEADER
+   ========================================== 
+*/
+header {
+  height: 40px;
+  margin: auto auto 50px;
+  width: 100%;
+}
+header img {
+  border: none;
+  margin: 15px 0 0 0;
+}
+
+/** =========================================
+   NAVIGATION
+   ========================================== 
+*/
+nav {
+  float: right;
+  padding-top: 0;
+}
+nav ul {
+  margin: 0;
+}
+nav li {
+  display: inline;
+  float: left;
+  line-style: none;
+  margin: 0;
+  width: 81px;
+}
+nav li a {
+  color: #000;
+  display: block;
+  font-family: 'Denk One', sans-serif;
+  padding: 51px 0 20px;
+  text-align: center;
+  text-decoration: none;
+}
+nav li a:hover {
+  background-color: #1AB7EA;
+  color: #FFF;
+}
+
+.current {
+  background-color: #1AB7EA;
+  color: #FFF;
+  background-color: #F1F1F1 !important;
+  color: #1ab7ea !important;
+}
+
+/** =========================================
+   CATEGORIES
+   ========================================== 
+*/
+.category {
+  background-color: #f1f1f1;
+  clear: both;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  overflow: hidden;
+  width: 100%;
+}
+.category .thumbnail {
+  display: inline;
+  float: left;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 68.75%;
+  /* font size in pixels - 11px/16px */
+  height: 240px;
+  margin: 0 33px;
+  width: 180px;
+}
+.category .thumbnail .project {
+  font-size: 81.81%;
+  /* font size in pixels - 9px/11px - Default font size is 16px but parent font-size of this div is 11px */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.category.about {
+  text-align: left;
+}
+.category.about h2 {
+  padding: 0 5%;
+  color: #1AB7EA;
+  font-family: 'Denk One', sans-serif;
+}
+.category.about article {
+  padding: 0 5%;
+}
+
+/** =========================================
+   CATEFORY TITLE
+   ========================================== 
+*/
+.applications {
+  background: url("../images/title-sprite.gif") no-repeat 0 0 transparent;
+  height: 34px;
+  width: 298px;
+}
+
+.flash-banners {
+  background: url("../images/title-sprite.gif") no-repeat 0 -35px transparent;
+  height: 34px;
+  width: 298px;
+}
+
+.games {
+  background: url("../images/title-sprite.gif") no-repeat 0 -175px transparent;
+  height: 34px;
+  width: 298px;
+}
+
+.flash-intros {
+  background: url("../images/title-sprite.gif") no-repeat 0 -210px transparent;
+  height: 34px;
+  width: 298px;
+}
+
+.flash-websites {
+  background: url("../images/title-sprite.gif") no-repeat 0 -105px transparent;
+  height: 34px;
+  width: 298px;
+}
+
+.e-learning {
+  background: url("../images/title-sprite.gif") no-repeat 0 -70px transparent;
+  height: 34px;
+  width: 298px;
+}
+
+.front-end {
+  background: url("../images/title-sprite.gif") no-repeat 0 -140px transparent;
+  height: 34px;
+  width: 298px;
+}
+
+/** =========================================
+   FIGURE
+   ========================================== 
+*/
+figure {
+  margin: 0 0 20px 0;
+}
+figure #div {
+  float: left;
+  margin: auto;
+  width: 298px;
+}
+
+/** =========================================
+   FOOTER
+   ========================================== 
+*/
+.foooter {
+  background: none;
+  height: 50px;
+  margin: 0 0 30px 0;
+  padding: 0;
+}
+
+#bottom {
+  background: #1ab7ea;
+  background-repeat: repeat-x;
+  color: #ffffff;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 75%;
+  /* font size in pixels - 12px/16px */
+  height: 50px;
+  line-height: 42px;
+  text-transform: uppercase;
+  width: inherit;
+}
+#bottom a:link, #bottom a:visited, #bottom a:active {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px;
+}
+#bottom a:hover {
+  background-color: #ffffff;
+  color: #002246;
+}
+
+#bottomlinks {
+  float: left;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.copyright, .hosting {
+  float: left;
+  margin: 4px 0 0 5px;
+}
+
+.hosting {
+  float: right;
+  margin-right: 5px;
+}
+
+/**
+ *
+ * 
+   =========================================
+   CONTACT FORM
+   ========================================== 
+ *
+ * 
+*/
+#contact-form {
+  background-color: #F1F1F1;
+  border: 6px solid #1AB7EA;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  height: 650px;
+  margin: 50px auto;
+  padding: 20px;
+  position: relative;
+  width: 34.883720%;
+}
+#contact-form h1 {
+  font-size: 262.5%;
+  /* font size in pixels - 42px/16px - Default font size is 16px */
+  font-family: 'Denk One',sans-serif;
+}
+#contact-form h2 {
+  font-style: normal;
+  /* font size in pixels - 42px/16px - Default font size is 16px */
+}
+#contact-form #submit-email {
+  background-color: #1AB7EA;
+  border: 1px solid #d1d1d1;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  color: #FFF;
+  display: block;
+  float: right;
+  margin-bottom: 0px;
+  margin-right: 6px;
+  width: 100px;
+}
+#contact-form #submit-email:hover {
+  background-color: #fff;
+  color: #1AB7EA;
+}
+#contact-form #submit-email:active {
+  position: relative;
+  top: 1px;
+}
+#contact-form input, #contact-form select, #contact-form textarea {
+  border: 1px solid #CEE1E8;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 65%;
+}
+#contact-form select {
+  width: 67%;
+}
+#contact-form label {
+  dislplay: block;
+  float: left;
+  text-align: left;
+  width: 30%;
+}
+
+.updateprojectbutton {
+  float: none !important;
+  margin: auto !important;
+  background-color: #1AB7EA;
+  border: 1px solid #d1d1d1;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  color: #FFF;
+  display: block;
+  float: right;
+  margin-bottom: 0px;
+  margin-right: 6px;
+  width: 100px;
+}
+.updateprojectbutton dead {
+  background-color: #F00;
+}
+.updateprojectbutton:hover {
+  background-color: #fff;
+  color: #1AB7EA;
+}
+.updateprojectbutton:active {
+  position: relative;
+  top: 1px;
+}
+
+.notlive {
+  background-color: #1AB7EA;
+  border: 1px solid #d1d1d1;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  color: #FFF;
+  display: block;
+  float: right;
+  margin-bottom: 0px;
+  margin-right: 6px;
+  width: 100px;
+}
+
+#req-field-desc {
+  width: 100%;
+  font-size: 60%;
+}
+
+#success {
+  background: url("../images/accepted_48.png") no-repeat scroll 402px center #d3edd3;
+  border: 1px solid #83D186;
+}
+
+#errors {
+  background: url("../images/cancel_48.png") no-repeat 405px center #ffe6e6;
+  border: solid 1px #E58E8E;
+}
+
+#success, #errors {
+  display: none;
+  font-weight: bold;
+  margin: 25px 0;
+  padding: 25px 16px;
+  text-align: left;
+  width: 94%;
+}
+
+/**
+ *
+ * 
+   =========================================
+	ADMIN
+   ========================================== 
+ *
+ * 
+*/
+.row {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.col1, .col2 {
+  background-color: #d1d1d1;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px 0px;
+  padding: 5px;
+  text-align: left;
+  width: 35%;
+}
+
+.col2 {
+  float: right;
+  width: 60%;
+}
+.col2 input {
+  width: 90%;
+  float: left;
+}
+
+#technologies {
+  float: left;
+  width: 100%;
+}
+
+nav ul li.admin {
+  background-color: #1AB7EA;
+  margin: 0 2px;
+}
+nav ul li.admin a {
+  color: #fff;
+  font-size: 13px;
+}
+nav ul li.admin a:hover {
+  color: #fff;
+  font-size: 14px;
+}
+
+.admin {
+  width: 150px !important;
+}
+
+#technologies table {
+  width: 100%;
+}
+#technologies table tr {
+  width: 100%;
+}
+#technologies table tr td {
+  text-align: left;
+  width: 33.33%;
+}
+
+/**
+ *
+ * 
+   =========================================
+	MEDIA QUERY FOR DEVICES  -  LANDSCAPE
+   ========================================== 
+ *
+ * 
+*/
+@media (min-width: 640px) and (max-width: 683px) {
+  body {
+    background: none;
+    text-align: center;
+  }
+
+  img {
+    border: none;
+  }
+
+  #main {
+    width: 95%;
+    margin: 0 auto;
+    background: none;
+    clear: both;
+  }
+
+  header {
+    margin: auto auto 50px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo {
+    float: none;
+    margin: 25px auto;
+  }
+  .logo a {
+    text-indent: -9999px;
+    clear: both;
+  }
+
+  nav {
+    float: left;
+    padding-top: 0;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  nav ul {
+    padding: 0;
+  }
+  nav ul li {
+    width: 33.33%;
+  }
+  nav ul li a {
+    background-color: #1AB7EA;
+    color: #FFF;
+    display: block;
+    line-height: 6px;
+    margin-bottom: 2px;
+    padding: 12px 0px;
+  }
+  nav ul li a:hover {
+    background-color: #FFF;
+    color: #1AB7EA;
+  }
+
+  .category .thumbnail {
+    margin: 0 9.79%;
+  }
+
+  #contact-form {
+    width: 90%;
+  }
+
+  #success, #errors {
+    background-position: 480px center;
+  }
+}
+@media (min-width: 400px) and (max-width: 600px) {
+  #contact-form {
+    height: auto;
+    width: 85%;
+  }
+  #contact-form label, #contact-form input {
+    width: 100%;
+  }
+}
+/**
+ *
+ * 
+   =========================================
+	MEDIA QUERY FOR DEVICES  -  PORTRAIT
+   ========================================== 
+ *
+ * 
+*/
+@media (min-width: 360px) and (max-width: 400px) {
+  body {
+    background: none;
+    text-align: center;
+  }
+
+  img {
+    border: none;
+  }
+
+  #main {
+    background: none;
+    clear: both;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  header {
+    height: 100%;
+    margin: auto auto 50px;
+    width: 100%;
+  }
+
+  .logo {
+    float: none;
+    margin: 25px auto;
+  }
+  .logo a {
+    clear: both;
+    text-indent: -9999px;
+  }
+
+  nav {
+    clear: both;
+    float: left;
+    margin-bottom: 10px;
+    padding-top: 0;
+    width: 100%;
+  }
+  nav ul {
+    padding: 0;
+  }
+  nav ul li {
+    width: 100%;
+  }
+  nav ul li a {
+    background-color: #1AB7EA;
+    color: #FFF;
+    display: block;
+    line-height: 6px;
+    margin-bottom: 2px;
+    padding: 12px 0px;
+  }
+  nav ul li a:hover {
+    background-color: #FFF;
+    color: #1AB7EA;
+  }
+
+  .category .thumbnail {
+    margin: auto;
+    width: 100%;
+  }
+
+  .applications, .flash-banners, .games, .flash-intros, .flash-websites, .e-learning, .front-end {
+    margin: auto;
+  }
+
+  #contact-form {
+    height: 600px;
+    width: 83%;
+  }
+  #contact-form h1 {
+    font-size: 120%;
+  }
+  #contact-form h2 {
+    font-size: 80%;
+  }
+  #contact-form label {
+    font-size: 80%;
+  }
+  #contact-form textarea {
+    border: none;
+    height: 120px;
+    padding: 3px;
+  }
+
+  #success, #errors {
+    font-size: 65%;
+    padding: 14px 16px;
+    width: 87%;
+  }
+
+  #success {
+    background: url("../images/accepted_mini_28.png") no-repeat scroll 230px center #d3edd3;
+  }
+
+  #errors {
+    background: url("../images/cancel_mini_28.png") no-repeat 230px center #ffe6e6;
+  }
+}
