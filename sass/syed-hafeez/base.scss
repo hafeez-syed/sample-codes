@@ -1,0 +1,135 @@
+/**
+ *
+ * @author: 			Hafeez Syed - feeziman007@hotmail.com
+ * @type: 				sass/compass=>css
+ * @project				My Portfolio Website
+ * @description:		Styles for Desktop and Devices
+ *
+ */
+
+/**
+ *	@mixin 			=> Declares function/method and also it accepts values as parameteres e.g "@mixin functionname($param: defaultvalue){}"
+ *	@include		=> Calls mixin function/method and also passes parameters e.g "@include functionname"
+ *	@extend			=> Inherits and styles e.g "@extend .style" OR "@extend #style"
+ *	$variableName	=> Declares variable name and value e.g "$variableName: value" OR "$main-color: #fff"
+ *
+ */
+
+/**
+ *	REFER TO http://compass-style.org/reference/compass/css3/
+ *
+ */
+
+
+
+//@import "compass/reset";
+
+// ==========================================================================
+//  Assigning common properties to variables
+// ========================================================================== 
+
+
+//
+//
+// SELECTION
+//
+//
+
+$selection-background-color:  rgba(255, 80, 33, 1); //#ff5021
+$selection-text-color:  rgba(255, 255, 255, 1); //#fff
+$selection-text-shadow: none;
+
+
+@mixin _selection() {
+	background:$selection-background-color; 
+	color:$selection-text-color; 
+	text-shadow: $selection-text-shadow;	
+}
+
+
+//
+//
+// BLUE COLOR
+//
+//
+
+$blue-color: #1ab7ea;
+
+
+//
+//
+// IMG BORDER
+//
+//
+
+@mixin _border() {
+	border: 1px solid rgba(204, 204, 204, 1) !important;
+}
+
+
+
+//
+//
+// NAV HOVER
+//
+//
+
+@mixin _navHover() {
+	background-color:#1AB7EA;
+	color:#FFF;
+}
+
+
+
+//
+//
+// CATEGORY TITLE
+//
+//
+
+@mixin _category_title($xpos:0px, $ypos:0px) {
+	background: url("../images/title-sprite.gif") no-repeat $xpos $ypos transparent;
+	height: 34px;
+	width:298px;
+}
+
+
+//
+//
+// CONTACT FORM 
+//
+//
+
+@mixin _contact_form() {
+	background-color:#1AB7EA;
+	border:1px solid #d1d1d1;
+	border-radius:0px;
+	-moz-border-radius:0px;	
+	-webkit-border-radius:0px;
+	color:#FFF;
+	display:block;
+	float:right;
+	margin-bottom:0px;
+	margin-right:6px;
+	width: 100px;
+}
+
+
+@mixin _contact_form_hover() {
+	background-color: #fff;
+	color: #1AB7EA;
+}
+
+@mixin _contact_form_active() {
+	position:relative;
+	top:1px;
+}
+
+@mixin _contact_form_success_error() {
+	display:none;
+	font-weight: bold;
+	margin: 25px 0;
+	padding: 25px 16px;
+	text-align: left;
+	width: 94%;	
+}
