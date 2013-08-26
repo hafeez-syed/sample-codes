@@ -1,0 +1,45 @@
+// GRID SYSTEM
+// ------------------------------------------------------------------
+// Grid system is build using the susy framework for flexibility. For
+// more details on how to use susy visit http://susy.oddbird.net/.
+
+// @debug $column-width;
+// @debug $total-columns;
+// @debug $grid-padding;
+// @debug $grid-padding;
+
+// SASS
+// ------------------------------------------------------------------
+
+#page {
+    width: $page-width;
+    margin: 0 auto;
+}
+
+#content {
+    @include container;
+    @include susy-grid-background;
+    position: relative;
+    clear: both;
+}
+
+#footer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+
+#content-1,
+#content-4,
+#content-5 {
+    @include span-columns($full-column-count omega);
+}
+
+#gallery,
+#content-2 {
+    @include span-columns($container-2-column-count);
+}
+
+#content-3 {
+    @include span-columns($container-3-column-count omega);
+}

@@ -1,0 +1,75 @@
+// LAYOUT
+// ------------------------------------------------------------------
+
+// VARIABLES
+// ------------------------------------------------------------------
+// $layout-2x1-first-column-count
+// $layout-2x1-second-column-count
+
+// SASS
+// ------------------------------------------------------------------
+
+// DEFAULTS
+.item {
+    @include span-columns($grid-min-column-count, $grid-max-column-count);
+}
+
+.irpos-1 {
+    @include omega;
+}
+
+#content-1,
+#content-4,
+#content-5 {
+
+    .item-count-1,
+    .item-count-2 {
+        .irpos-1 {
+            float:left;
+        }
+    }
+
+}
+
+#content-2 {
+
+    .item-count-1 {
+        .item {
+            @include span-columns($container-2-column-count, $container-2-column-count);
+            @include omega;
+        }
+    }
+
+//     .layout-2x1 {
+
+//         &.item-count-2 {
+
+//             .ipos-1 {
+//                 @include span-columns($layout-2x1-item-1-columns, $container-2-column-count);
+//             }
+
+//             .irpos-1 {
+//                 @include span-columns($layout-2x1-item-2-columns, $container-2-column-count);
+//                 @include omega;
+//             }
+
+//         }
+
+//     }
+
+}
+
+#content-5 {
+    .layout-6x1 {
+        .item {
+            @include span-columns($grid-max-column-count, $container-5-column-count);
+        }
+        .module {
+            float: left;
+            @include span-columns($grid-half-column-count, $container-5-column-count);
+            &.mrpos-1 {
+                @include omega;
+            }
+        }
+    }
+}

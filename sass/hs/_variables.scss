@@ -1,0 +1,34 @@
+// Herald Sun
+
+//$header-background:                 #444;
+
+//@debug $header-background;
+
+$header-ads-background:                             none;
+$header-logo-background:                            image-url('metros/heraldsun/logo.png') no-repeat 8px 13px;
+
+$header-logo-link-vertical-image:                   'metros/heraldsun/logo-networkbar.png';
+
+$navigation-enable-dropdown:                        false;
+
+$slim-header-height:                                28px;
+$slim-header-logo-background:                       image-url($header-logo-link-vertical-image) no-repeat 0 5px;
+$slim-header-logo-height:                           $slim-header-height;
+$slim-header-logo-link-padding:                     $slim-header-logo-height 0 0 0;
+$slim-header-logo-link-height:                      0;
+
+$slim-header-title-h1-line-height:                  $slim-header-height;
+$slim-header-title-h1-strong-line-height:           $slim-header-title-h1-line-height;
+
+$weather-tab-activecity-class:                      W00;
+
+
+$footer-branding:									image-url('metros/heraldsun/logo-footer.png') no-repeat 0 top;
+
+// Homepage Local News module
+$local-module-option-background-color:				#e6eef2 !default;
+$local-module-option-hover-background-color:		#c0deeb !default;
+$local-module-options-loading-background: 			$vertical-localnews-accent-color image-url('communities/leader/loading.gif') no-repeat 50% 50% !default;
+$local-module-option-width:							650px !default; 
+$local-module-branding-image:						image-url('communities/leader/local-module-logo.gif') no-repeat right -4px !default;
+$local-module-branding-image-right-padding:			135px !default;

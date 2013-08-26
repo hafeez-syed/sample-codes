@@ -1,0 +1,59 @@
+// Vertical
+@import "../common/libs/base";
+
+@import "../common/vertical";
+
+// DEFAULTS
+// ------------------------------------------------------------------
+// These are the initial defaults which made available to children
+// templates when required
+
+// GLOBAL DEPENDENCIES
+// -----------------------------------
+// Frameworks, mixins and variables
+
+// Load the base framework
+@import "../common/base";
+
+// <CHANNEL> <SUB-TYPE> PARTIALS
+// ------------------------------------------------------------------
+// Partials which regardless of template type should be included as
+// these are common to this channel sub-type.
+
+// HEADER & FOOTER
+// ---------------
+// Baselines for site header and footer
+
+@import "partials/global/header/base";
+@import "../common/partials/global/footer/base";
+
+// PARTIALS > OPTIONAL
+// -----------------------------------
+// Constitutes the optional baseline 
+// components which can be added to a 
+// page. 
+
+// ADS
+// ---------------
+@import "../common/partials/optional/misc/ad";
+
+// LAYOUT & GROUPS
+// ---------------
+// Provides baselines for groups
+
+@import "../common/partials/optional/layout/base";
+@import "../common/partials/optional/group/base";
+@import "../common/partials/optional/module/base";
+
+// MODULES
+// ---------------
+@import "../common/partials/optional/module/type/poll";
+
+#network-account {
+    margin-left: 180px;
+    position: relative;
+}
+
+#header #header-logo a {
+    width: $vertical-header-logo-width;
+}
