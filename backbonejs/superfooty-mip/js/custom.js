@@ -2,8 +2,8 @@
  *
  * @author: 			Hafeez Syed - hafeez.syed@news.com.au
  * @type: 				javascript/jquery
- * @project:			My Portfolio Website
- * @description:		Styles for Desktop and Devices
+ * @project:			Superfooty Most Important Player
+ * @description:		Styles for Superfooty MIP
  *
  */
 /**

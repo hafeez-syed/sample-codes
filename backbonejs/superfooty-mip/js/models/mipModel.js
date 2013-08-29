@@ -1,10 +1,10 @@
-/*
-	MIP Model
+/* =========================================
+   MIP Model
+   ========================================== 
 */
 	
 MIPModel 				= Backbone.Model.extend({
 	//Validate the MIP Model
-	
 	validate: function(attr) {
 		if( !(attr.team_id && attr.team_club && attr.team_players) ) {
 		return "Error Occurred";
@@ -18,12 +18,11 @@ MIPModel 				= Backbone.Model.extend({
 		this.bind("error", function (model, error) {
 			console.log(error);
 		});
-		 
-		//console.log('Inside initialize');
 	},
-	//*/
+
 	sync: function (method, model, options) {
 		
+		// get team and player data and parse it to the RESTAPI to update votes 
 		var ind = this.get('ind');
 		var tid = this.get('team_id');
 		var pid = this.get('team_players')[ind].player_id;
@@ -33,23 +32,15 @@ MIPModel 				= Backbone.Model.extend({
 	 		$.ajax({
 	 			dataType: 'JSON',
 	 			type: 'PUT',
-	 			url:  new GSModel().get('restApiUrl')+pid,
+	 			url:  new GSModel().get('restApiUrl')+tid,
 	 			data: {
 	 					team_id: 		tid,
 	 					player_id: 		pid,
 	 					player_votes: 	pvo
 			 	},
 	 			success: function (data) {
-	 				//console.log(data);
 	 				$('.players-hover-bg').show();
 					$('.players-popularity').show();
-
-	 				//console.log(data);
-	 				//$('.voted').text('VOTED');
-	 				//$('.voting-button').click(false);
-	 				//$('.voting-button').fadeTo('slow', 0.5);
-					//$('.voting-button').on('mouseover', function() { return false; });
-					//$('.voting-button').on('mouseout', function() { return false; });
 	 			}, // success
 
 	 			error: function(model, response) {

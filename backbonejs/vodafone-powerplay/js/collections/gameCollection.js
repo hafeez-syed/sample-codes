@@ -1,9 +1,9 @@
-/*
-	Game Collection
+/* =========================================
+   Game Collection
+   ========================================== 
 */
 
 GameCollections 		= Backbone.Collection.extend({
-	model: GameModel,
-	
+	model: GameModel,	
 	url : new GSModel().get('restApiUrl')
 });

@@ -51,7 +51,6 @@
     <script src="js/collections/gameCollection.js"></script>
     <script src="js/views/gameView.js"></script>
     <script src="js/views/playerDetailsView.js"></script>
-    <script src="js/routers/router.js"></script> 
-    <script src="js/custom.js"></script>
+    <script src="js/routers/router.js"></script>
 </body>
 </html>

@@ -57,7 +57,6 @@
     <script src="js/views/teamView.js"></script>
     <script src="js/views/teamDetailsView.js"></script>
     <script src="js/views/iconsView.js"></script>
-    <script src="js/routers/router.js"></script> 
-    <script src="js/custom.js"></script>
+    <script src="js/routers/router.js"></script>
 </body>
 </html>

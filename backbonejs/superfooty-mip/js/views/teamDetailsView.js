@@ -1,5 +1,6 @@
-/*
-	Team Details View
+/* =========================================
+   Team Details View
+   ========================================== 
 */
 
 TeamDetailsView 			= Backbone.View.extend({
@@ -7,6 +8,14 @@ TeamDetailsView 			= Backbone.View.extend({
 
 	template : htmlTemplate('teamdetails-template'),
 	
+	/* =========================================
+	   Step 2 :
+
+	    - Show all team Icons in the footer
+	    - Fetch each player data from a Collection  
+
+	   ========================================== 
+	*/
 	render: function(coll) {
 		var iconsView = new IconsView({model: mipCollections, el: $('#footer')});
 		iconsView.showIcons();
@@ -14,10 +23,21 @@ TeamDetailsView 			= Backbone.View.extend({
 		return this;
 	},
 
+	/* =========================================
+	   Step 1:
+
+	   	- Called from Router 
+	   ========================================== 
+	*/
 	showTeamDetailsPage: function(qstring) {
 		$('#wrapper').empty();
 
-
+		/* =========================================
+		   Changing the RESTAPI URL to fetch
+		   a specific TEAM data and parse it for
+		   rendering
+		   ========================================== 
+		*/
 		mipCollections.url = new GSModel().get('restApiOriginalUrl')+qstring;
 
 		var me 		= this;
@@ -29,6 +49,12 @@ TeamDetailsView 			= Backbone.View.extend({
 		});
 	},
 
+	/* =========================================
+	   Step 3:
+
+	   	- Append player data in the DOM element
+	   ========================================== 
+	*/
 	listData: function(collection) {
 		var playerData = new PlayerDataView({model: collection});
 		this.$el.hide();
@@ -38,6 +64,11 @@ TeamDetailsView 			= Backbone.View.extend({
 	}
 
 });
+
+/* =========================================
+   Single Player View
+   ========================================== 
+*/
 
 PlayerDataView 					= Backbone.View.extend({
 	template 				: htmlTemplate('teamdetails-template'),
@@ -57,12 +88,6 @@ PlayerDataView 					= Backbone.View.extend({
 		'mouseout .voting-button' 	: 'fadeOut',
 		'mouseover .back-button' 	: 'fadeIn',
 		'mouseout .back-button' 	: 'fadeOut'
-
-		
-		//'mouseover .players'  			: 'showDescription',
-		//'mouseout .players'  			: 'hideDescription'
-		//'mouseenter .players'  		: 'showDescription',
-		//'mouseleave .players'  		: 'hideDescription'
 	},
 
 	
@@ -79,17 +104,12 @@ PlayerDataView 					= Backbone.View.extend({
 	showDescription: function(e) {
 		console.log($(e.currentTarget).parent().find($('.player-hover-container')).css('display','none'));
 		var con = $(e.currentTarget).parent().find($('.player-hover-container'));
-		//con.show();
-		con.find('.players-hover-bg').show();
-		//con.find('.players-description').stop(true, true).show();
-		
+		con.find('.players-hover-bg').show();	
 	},
 
 	hideDescription: function(e) {
-		//$(e.currentTarget).parent().find($('.player-hover-container')).show();
 		var con = $(e.currentTarget).parent().find($('.player-hover-container'));
 		con.find('.players-hover-bg').hide();
-		//con.find('.players-description').stop(true, true).hide();
 	},
 
 
@@ -123,13 +143,13 @@ PlayerDataView 					= Backbone.View.extend({
 			ePp 	= this.model.get('team_players')[i].player_popularity;
 
 			modelArray[i] = {
-					'player_id'			: eId,
-					'player_firstname'	: eFn,
-					'player_lastname'	: eLn,
-					'player_votes' 		: eVo,
-					'player_description': eDs,
-					'player_largeImage'	: eLi,
-					'player_popularity'	: ePp				
+				'player_id'			: eId,
+				'player_firstname'	: eFn,
+				'player_lastname'	: eLn,
+				'player_votes' 		: eVo,
+				'player_description': eDs,
+				'player_largeImage'	: eLi,
+				'player_popularity'	: ePp				
 			}
 		}
 
@@ -144,31 +164,15 @@ PlayerDataView 					= Backbone.View.extend({
 		}
 
 		newJSONModel = JSON.parse(JSON.stringify(myUpdatedModel));
-
 	
 		var mm = this.model.set(newJSONModel);		
 		mm.save();
-
 
 		var con 		= $(e.currentTarget).parent();
 		var hoverBg 	= $(con.find('.player-hover-container > .players-hover-bg'));
 		var percentage 	= $(con.find('.player-hover-container > .players-popularity'));
 
-
 		console.log(this.model.attributes);
-
-		//$(con.find('.player-hover-container > .players-hover-bg')).addClass({'display':'block'});
-		
-		//console.log($(con.find('.player-hover-container > .players-popularity')).css('display'));
-		//$(con.find('.player-hover-container > .players-popularity')).removeClass('display','block');
-		//console.log($(con.find('.player-hover-container > .players-popularity')).css('display'));
-
-		//$(hoverBg).css('display','block');
-		//$(hoverBg).show();
-		//$(con.find('.players-hover-bg')).css('display','block');
-		//console.log(con.find('.players-hover-bg').css('display'));
-
 		return false;
 	}
-
 });

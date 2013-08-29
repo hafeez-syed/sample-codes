@@ -1,11 +1,19 @@
+/* =========================================
+   Getter Setter Model to change
+   RESTAPI URLs
+   ========================================== 
+*/
+
 var GSModel = Backbone.GSModel.extend({
   
+  // Setter
   setters: {
     resturl: function(url) {
         return url;
     }
   },
 
+  // Getter
   getters: {
     restApiUrl: function() {
         return this.get('resturl');
@@ -14,7 +22,6 @@ var GSModel = Backbone.GSModel.extend({
     restApiOriginalUrl: function() {
         return this.get('original');
     },
-
   },
 
   defaults: {

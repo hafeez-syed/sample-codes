@@ -1,5 +1,6 @@
-/*
-	Game Routers
+/* =========================================
+   Game Routers
+   ========================================== 
 */
 
 GameRouters 	= Backbone.Router.extend({
@@ -18,6 +19,11 @@ GameRouters 	= Backbone.Router.extend({
 	}
 });
 
+/* =========================================
+   Initializing Model, Views, Collections
+   and Router
+   ========================================== 
+*/
 
 var gameModel				= new GameModel();
 var gameCollections			= new GameCollections();

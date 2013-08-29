@@ -1,5 +1,6 @@
-/*
-	Game View
+/* =========================================
+   Game View
+   ========================================== 
 */
 
 GameView 								= Backbone.View.extend({
@@ -10,11 +11,24 @@ GameView 								= Backbone.View.extend({
 	initialize: function() {
 	},
 
+	/* =========================================
+	   Step 2 :
+
+	    - Fetch each team data from a Collection  
+
+	   ========================================== 
+	*/
 	render: function(coll) {
 		coll.each(this.listGames, this);
 		return this;
 	},
 
+	/* =========================================
+	   Step 3:
+
+	   	- Append player data in the DOM element
+	   ========================================== 
+	*/
 	listGames: function(collection) {
 		var singleGame = new SingleGameView({model: collection});
 		this.$el.hide();
@@ -23,9 +37,21 @@ GameView 								= Backbone.View.extend({
 		return false;
 	},
 
+	/* =========================================
+	   Step 1:
+
+	   	- Called from Router 
+	   ========================================== 
+	*/
 	showGamePage: function(qstring) {
 		$('#details').empty();
 		var me 		= this;
+
+		/* =========================================
+		   Fetch specific TEAM data and parse it for
+		   rendering
+		   ========================================== 
+		*/		
 		gameCollections.fetch({
 			data: qstring,
 			success : function(collection) {
@@ -34,6 +60,11 @@ GameView 								= Backbone.View.extend({
 		});
 	}
 });
+
+/* =========================================
+   Single Game View
+   ========================================== 
+*/
 
 SingleGameView 					= Backbone.View.extend({
 	template 					: htmlTemplate('main-template'),

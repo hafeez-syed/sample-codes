@@ -1,5 +1,6 @@
-/*
-	Powerplay View
+/* =========================================
+   Powerplay View
+   ========================================== 
 */
 
 PlayerDetailsView 								= Backbone.View.extend({
@@ -7,14 +8,33 @@ PlayerDetailsView 								= Backbone.View.extend({
 
 	template : htmlTemplate('playerdetails-template'),
 	
+	/* =========================================
+	   Step 2 :
+
+	    - Fetch each event data from a Collection  
+
+	   ========================================== 
+	*/
 	render: function(coll) {
 		coll.each(this.listData, this);
 		return this;
 	},
 
+	/* =========================================
+	   Step 1:
+
+	   	- Called from Router 
+	   ========================================== 
+	*/
 	showPlayerDetailsPage: function(qstring) {
 		$('#wrapper').empty();
 
+		/* =========================================
+		   Changing the RESTAPI URL to fetch
+		   a specific EVENT data and parse it for
+		   rendering
+		   ========================================== 
+		*/
 		gameCollections.url = gameCollections.url+qstring;
 
 		var me 		= this;
@@ -26,6 +46,12 @@ PlayerDetailsView 								= Backbone.View.extend({
 		});
 	},
 
+	/* =========================================
+	   Step 3:
+
+	   	- Append event data in the DOM element
+	   ========================================== 
+	*/
 	listData: function(collection) {
 		var gameData = new GameDataView({model: collection});
 		this.$el.hide();
@@ -35,6 +61,11 @@ PlayerDetailsView 								= Backbone.View.extend({
 	}
 
 });
+
+/* =========================================
+   Game Data View
+   ========================================== 
+*/
 
 GameDataView 					= Backbone.View.extend({
 	template 				: htmlTemplate('playerdetails-template'),

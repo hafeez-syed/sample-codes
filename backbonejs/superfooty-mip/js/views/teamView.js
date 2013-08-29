@@ -1,5 +1,6 @@
-/*
-	Team View
+/* =========================================
+   Team View
+   ========================================== 
 */
 
 TeamView 								= Backbone.View.extend({
@@ -10,11 +11,24 @@ TeamView 								= Backbone.View.extend({
 	initialize: function() {
 	},
 
+	/* =========================================
+	   Step 2 :
+
+	    - Fetch each team data from a Collection  
+
+	   ========================================== 
+	*/
 	render: function(coll) {
 		coll.each(this.listGames, this);
 		return this;
 	},
 
+	/* =========================================
+	   Step 3:
+
+	   	- Append player data in the DOM element
+	   ========================================== 
+	*/
 	listGames: function(collection) {
 		var singleGame = new SingleGameView({model: collection});
 		this.$el.hide();
@@ -23,9 +37,21 @@ TeamView 								= Backbone.View.extend({
 		return false;
 	},
 
+	/* =========================================
+	   Step 1:
+
+	   	- Called from Router 
+	   ========================================== 
+	*/
 	showGamePage: function(qstring) {
 		$('#details').empty();
 		var me 		= this;
+		
+		/* =========================================
+		   Fetch specific TEAM data and parse it for
+		   rendering
+		   ========================================== 
+		*/		
 		mipCollections.fetch({
 			data: qstring,
 			success : function(collection) {
@@ -35,10 +61,14 @@ TeamView 								= Backbone.View.extend({
 	}
 });
 
+/* =========================================
+   Single Game View
+   ========================================== 
+*/
+
 SingleGameView 					= Backbone.View.extend({
+	
 	template 					: htmlTemplate('main-template'),
-
-
 
 	render : function () {
 		this.$el.html(this.template(this.model.toJSON()));
@@ -65,7 +95,4 @@ SingleGameView 					= Backbone.View.extend({
 		$(e.currentTarget).find('.hovertip').removeClass('animated lightSpeedIn');
 		$(e.currentTarget).find('.hovertip').addClass('animated lightSpeedOut');
 	},
-
-
-
 });

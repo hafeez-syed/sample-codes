@@ -1,5 +1,6 @@
-/*
-	Game Model
+/* =========================================
+   Game Model
+   ========================================== 
 */
 	
 GameModel 				= Backbone.Model.extend({
@@ -17,8 +18,6 @@ GameModel 				= Backbone.Model.extend({
 		this.bind("error", function (model, error) {
 			console.log(error);
 		});
-		 
-		//console.log('Inside initialize');
 	},
 	//*/
 	sync: function (method, model, options) {
